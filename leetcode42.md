@@ -1,5 +1,5 @@
-1维版本:
-\n method 1: 直接计算每个h[i]能够存的水
+1维版本:<br>
+method 1: 直接计算每个h[i]能够存的水
 ```C++
 class Solution {
 public:
