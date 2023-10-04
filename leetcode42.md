@@ -40,4 +40,5 @@ public:
     }
 };
 ```
+![details](images/42_1.jpg)
 2维版本:
