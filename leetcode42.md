@@ -24,7 +24,7 @@ public:
     int trap(vector<int>& height) {
       int N=height.size(), res=0;
       stack<int> st;
-      for(int i=0; i<n; i++)
+      for(int i=0; i<N; i++)
       {
         while(!st.empty() && height[i] >= height[st.top()])
         {
@@ -32,7 +32,7 @@ public:
           st.pop();
           if(st.empty()) break;
           int last = st.top();
-          res += (min(height[i], height[last])-height[top])*(i-last-1)
+          res += (min(height[i], height[last])-height[top])*(i-last-1);
         }
         st.push(i);
       }
