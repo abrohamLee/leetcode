@@ -16,7 +16,7 @@ f[i][j][k] 表示 s1[i~i+k-1] 与 s2[j ~ j+k-1]匹配的所有方案
          s2[j ~ j+k-u]             s2[j+k-u ~ j+k-1]
 状态总数: O(n^3), 状态转移数量: O(n), time complexity: O(n^4)
 
-'''C++
+```C++
 class Solution{
 public:
   bool isScramble(string s1, string s2){
@@ -42,5 +42,5 @@ public:
     return f[0][0][n];
   }
 };
-'''
+```
  
