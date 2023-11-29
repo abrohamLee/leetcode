@@ -1,0 +1,271 @@
+\documentclass{article}
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{cleveref}       % smart cross-referencing
+\usepackage{lipsum}         % Can be removed after putting your text content
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{doi}
+
+\title{A template for the \emph{arxiv} style}
+
+% Here you can change the date presented in the paper title
+%\date{September 9, 1985}
+% Or remove it
+%\date{}
+
+\newif\ifuniqueAffiliation
+% Uncomment to use multiple affiliations variant of author block 
+\uniqueAffiliationtrue
+
+\ifuniqueAffiliation % Standard variant of author block
+\author{ \href{https://orcid.org/0000-0000-0000-0000}{\includegraphics[scale=0.06]{orcid.pdf}\hspace{1mm}David S.~Hippocampus}\thanks{Use footnote for providing further
+		information about author (webpage, alternative
+		address)---\emph{not} for acknowledging funding agencies.} \\
+	Department of Computer Science\\
+	Cranberry-Lemon University\\
+	Pittsburgh, PA 15213 \\
+	\texttt{hippo@cs.cranberry-lemon.edu} \\
+	%% examples of more authors
+	\And
+	\href{https://orcid.org/0000-0000-0000-0000}{\includegraphics[scale=0.06]{orcid.pdf}\hspace{1mm}Elias D.~Striatum} \\
+	Department of Electrical Engineering\\
+	Mount-Sheikh University\\
+	Santa Narimana, Levand \\
+	\texttt{stariate@ee.mount-sheikh.edu} \\
+	%% \AND
+	%% Coauthor \\
+	%% Affiliation \\
+	%% Address \\
+	%% \texttt{email} \\
+	%% \And
+	%% Coauthor \\
+	%% Affiliation \\
+	%% Address \\
+	%% \texttt{email} \\
+	%% \And
+	%% Coauthor \\
+	%% Affiliation \\
+	%% Address \\
+	%% \texttt{email} \\
+}
+\else
+% Multiple affiliations variant of author block
+\usepackage{authblk}
+\renewcommand\Authfont{\bfseries}
+\setlength{\affilsep}{0em}
+% box is needed for correct spacing with authblk
+\newbox{\orcid}\sbox{\orcid}{\includegraphics[scale=0.06]{orcid.pdf}} 
+\author[1]{%
+	\href{https://orcid.org/0000-0000-0000-0000}{\usebox{\orcid}\hspace{1mm}David S.~Hippocampus\thanks{\texttt{hippo@cs.cranberry-lemon.edu}}}%
+}
+\author[1,2]{%
+	\href{https://orcid.org/0000-0000-0000-0000}{\usebox{\orcid}\hspace{1mm}Elias D.~Striatum\thanks{\texttt{stariate@ee.mount-sheikh.edu}}}%
+}
+\affil[1]{Department of Computer Science, Cranberry-Lemon University, Pittsburgh, PA 15213}
+\affil[2]{Department of Electrical Engineering, Mount-Sheikh University, Santa Narimana, Levand}
+\fi
+
+% Uncomment to override  the `A preprint' in the header
+%\renewcommand{\headeright}{Technical Report}
+%\renewcommand{\undertitle}{Technical Report}
+\renewcommand{\shorttitle}{\textit{arXiv} Template}
+
+%%% Add PDF metadata to help others organize their library
+%%% Once the PDF is generated, you can check the metadata with
+%%% $ pdfinfo template.pdf
+\hypersetup{
+pdftitle={A template for the arxiv style},
+pdfsubject={q-bio.NC, q-bio.QM},
+pdfauthor={David S.~Hippocampus, Elias D.~Striatum},
+pdfkeywords={First keyword, Second keyword, More},
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	\lipsum[1]
+\end{abstract}
+
+
+% keywords can be removed
+\keywords{First keyword \and Second keyword \and More}
+
+
+\section{Introduction}
+\lipsum[2]
+\lipsum[3]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Computer Vision}
+\label{sec:headings}
+
+% \lipsum[4] See Section \ref{sec:headings}.
+
+\subsection{Background Information}
+According to a report by the World Health Organization, there are over 7 million blind individuals in China [1]. However, in major cities such as Beijing and Shanghai, visually impaired individuals are rarely seen in public spaces. This can be primarily attributed to the challenges faced by the blind population in adapting to the bustling and complex activities of modern urban life. For instance, undertaking solo journeys on public transportation like buses and subways poses considerable difficulties. Moreover, engaging in daily activities such as shopping, dining, and entertainment independently within the diverse and multifunctional modern shopping malls proves to be a formidable task for the visually impaired.
+% \begin{equation}
+% 	\xi _{ij}(t)=P(x_{t}=i,x_{t+1}=j|y,v,w;\theta)= {\frac {\alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}{\sum _{i=1}^{N} \sum _{j=1}^{N} \alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}}
+% \end{equation}
+
+\subsubsection{The Visual System Of GUIDOG }
+The GUIDOG, a system developed by our team, represents a significant advancement in artificial vision assistance. Early artificial vision assistance systems were predominantly non-invasive and wearable devices. Examples include early sonar detection devices [3], ultrasonic canes [4], and the 2021 Stanford University-developed cane equipped with GPS and a gyroscope [5]. These devices, however, had relatively simple functionalities, ambiguous instructions, and struggled to adapt to the complexities of modern urban environments and road conditions, making widespread adoption challenging.
+
+In contrast, our GUIDOG system employs multiple cameras to capture environmental images. These images are then processed by a miniature chip processor, AI image interpretation software, and natural language output capabilities. This design ultimately endows GUIDOG with the capability to guide visually impaired individuals through certain aspects of their daily lives.
+
+% \paragraph{Paragraph}
+% \lipsum[7]
+\subsubsection{Object Detection Algorithm}
+In our experiments, we conducted a comparative analysis of various object detection algorithms. Due to the notable balance between speed and accuracy provided by the YOLO (You Only Look Once) framework, along with its ability to swiftly and reliably identify objects in images, we ultimately chose the YOLO algorithm and deployed it on the Jetson Nano platform. YOLO, in our case, completes the detection task in a single pass through the network.
+
+YOLOv8 achieves a unified object detection process by simultaneously detecting all bounding boxes. To achieve this goal, YOLO represents the prediction for each bounding box in the input image with five values: Pc, bx, by, bh, and bw. Here, Pc represents the confidence score of the bounding box, reflecting the model's confidence in the presence of an object within the bounding box and the accuracy of the bounding box itself. The coordinates bx and by indicate the center of the box relative to the grid cell, while bh and bw represent the height and width of the box relative to the entire image. The output of YOLO is a tensor of dimensions S×S×(B×5+C), where S is the grid size, B is the number of bounding boxes predicted per grid cell, and C is the number of classes.
+
+To refine the results and eliminate duplicate detections, one can apply non-maximum suppression (NMS). This process helps ensure the final output contains accurate and non-redundant object detections.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{image.png}
+    \caption{Confusion matrix of the model on validation datasets}
+    \label{fig:confusion matrix of our trained model on our trainning datasets}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{image2.png}
+    \caption{Object Detection result in our real task}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsubsection{Object Tracking Algorithm}
+In practical scenarios, GUIDOG requires the deployment of target tracking algorithms to analyze and track different objects in the current environment. This tracking and analysis are essential for determining the distance from and relative speed to the visually impaired individual. Ultimately, this information is crucial in assessing the safety of the visually impaired person's current location and determining the appropriate navigation instructions for the next steps. Therefore, we need to integrate target tracking algorithms into GUIDOG's system.
+
+We finally choose to apply DeepSORT algorithm to perform object tracking. Despite its average performance, the algorithm demonstrates commendable speed, simplicity, and lightweight characteristics. These attributes are particularly advantageous for deployment on terminal devices with limited memory and computational power, such as the Jetson Nano. The efficiency of DeepSORT aligns well with the resource constraints of the Jetson Nano, ensuring that the tracking capabilities are both effective and resource-friendly for real-time applications in dynamic environments.
+
+DeepSORT, as an evolution of the SORT algorithm, integrates object detection and tracking components. The core of its tracking module relies on the Kalman filtering algorithm and the Hungarian algorithm. The Kalman filter predicts the state of the bounding box in the next frame, and this state is then matched with the detection results of the next frame using the Hungarian algorithm, facilitating the tracking process. If an object is occluded or not detected for other reasons, the predicted state information from the Kalman filter cannot be matched with the detection results, leading to the premature termination of that tracking segment.
+
+DeepSORT introduces re-identification algorithms from deep learning to extract appearance features (represented as low-dimensional vectors) of detected objects within bounding boxes. After each detection and tracking iteration, DeepSORT extracts and saves the appearance features of the detected objects. In subsequent steps, for each frame, it computes the similarity between the appearance features of currently detected objects and those stored from previous frames. This iterative process helps prevent instances of missed detections, loss of identity IDs, and strengthens the determination of whether the objects belong to the same entity. In essence, DeepSORT not only uses the velocity and directional trends of objects for tracking but also leverages appearance features to reinforce the judgment of whether the tracked objects are the same.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{image3.png}
+    \caption{The process of DeepSORT model(ref:[2])}
+    \label{fig:The process of DeepSORT model(ref:[2])}
+\end{figure}
+
+\subsubsection{Future Development}
+The envisioned system aims to leverage remote wireless communication technology, chip advancements, and the capabilities of small electronic devices, cameras, and sensors integrated into GUIDOG. Additionally, it seeks to utilize the extensive database and computational power of the cloud. Through this, backend personnel and AI models can gain real-time and comprehensive insights into the live scenes, environmental parameters, and the status of individuals ahead, even across cities.
+
+The system employs a combination of cloud databases, on-board memory databases, AI-assisted recognition, and human analysis. This synergy enables the rapid derivation of optimal action plans. The backend personnel or AI large models can compare the information from the cloud database with the on-board memory database, leverage AI-assisted recognition, and perform human-analyzed insights to swiftly formulate the most reasonable course of action. These action instructions are then promptly communicated to the personnel on the ground.
+
+Moreover, the system incorporates voice-based communication to provide humanistic care. It engages in real-time dialogue to offer verbal support and receive timely feedback from individuals on the ground. This holistic approach not only ensures efficient navigation and decision-making but also fosters a more human-centric and responsive interaction between the system and the individuals it assists.
+
+\section{Reference}
+[1] WHO, “Vision Impairment and Blindness,” 2018 [M/OL][2021-10-17]. https://www.who.int/en/news-room/fact-sheets/detail/blindness-and-visual-impairment
+
+[2] Yang Yicheng,DeepSORT algorithm Implementation
+
+[3] Brabyn J A. New developments in mobility and orientation aids for the blind. IEEE Trans Biomed Eng, 1982, 29(4): 285-289
+
+[4] Hoyle B, Waters D. Mobility AT: the batcane (UltraCane) //Hersh M A, Johnson M A. Assistive Technology for Visually Impaired and Blind People. London: Springer London. 2008: 209-229
+
+[5] Patrick S, Arjun T, Mykel J K. Multimodal sensing and intuitive steering assistance improve navigation and mobility for people with impaired vision. Sci Robot, 2021,6(59):eabg6594
+
+
+
+
+\section{Examples of citations, figures, tables, references}
+\label{sec:others}
+
+\subsection{Citations}
+Citations use \verb+natbib+. The documentation may be found at
+\begin{center}
+	\url{http://mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf}
+\end{center}
+
+Here is an example usage of the two main commands (\verb+citet+ and \verb+citep+): Some people thought a thing \citep{kour2014real, keshet2016prediction} but other people thought something else \citep{kour2014fast}. Many people have speculated that if we knew exactly why \citet{kour2014fast} thought this\dots
+
+\subsection{Figures}
+\lipsum[10]
+See Figure \ref{fig:fig1}. Here is how you add footnotes. \footnote{Sample of the first footnote.}
+\lipsum[11]
+
+\begin{figure}
+	\centering
+	\fbox{\rule[-.5cm]{4cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+	\caption{Sample figure caption.}
+	\label{fig:fig1}
+\end{figure}
+
+\subsection{Tables}
+See awesome Table~\ref{tab:table}.
+
+The documentation for \verb+booktabs+ (`Publication quality tables in LaTeX') is available from:
+\begin{center}
+	\url{https://www.ctan.org/pkg/booktabs}
+\end{center}
+
+
+\begin{table}
+	\caption{Sample table title}
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+		\multicolumn{2}{c}{Part}                   \\
+		\cmidrule(r){1-2}
+		Name     & Description     & Size ($\mu$m) \\
+		\midrule
+		Dendrite & Input terminal  & $\sim$100     \\
+		Axon     & Output terminal & $\sim$10      \\
+		Soma     & Cell body       & up to $10^6$  \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:table}
+\end{table}
+
+\subsection{Lists}
+\begin{itemize}
+	\item Lorem ipsum dolor sit amet
+	\item consectetur adipiscing elit.
+	\item Aliquam dignissim blandit est, in dictum tortor gravida eget. In ac rutrum magna.
+\end{itemize}
+
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}  %%% Uncomment this line and comment out the ``thebibliography'' section below to use the external .bib file (using bibtex) .
+
+
+%%% Uncomment this section and comment out the \bibliography{references} line above to use inline references.
+% \begin{thebibliography}{1}
+
+% 	\bibitem{kour2014real}
+% 	George Kour and Raid Saabne.
+% 	\newblock Real-time segmentation of on-line handwritten arabic script.
+% 	\newblock In {\em Frontiers in Handwriting Recognition (ICFHR), 2014 14th
+% 			International Conference on}, pages 417--422. IEEE, 2014.
+
+% 	\bibitem{kour2014fast}
+% 	George Kour and Raid Saabne.
+% 	\newblock Fast classification of handwritten on-line arabic characters.
+% 	\newblock In {\em Soft Computing and Pattern Recognition (SoCPaR), 2014 6th
+% 			International Conference of}, pages 312--318. IEEE, 2014.
+
+% 	\bibitem{keshet2016prediction}
+% 	Keshet, Renato, Alina Maor, and George Kour.
+% 	\newblock Prediction-Based, Prioritized Market-Share Insight Extraction.
+% 	\newblock In {\em Advanced Data Mining and Applications (ADMA), 2016 12th International 
+%                       Conference of}, pages 81--94,2016.
+
+% \end{thebibliography}
+
+
+\end{document}
